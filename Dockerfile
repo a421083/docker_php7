@@ -129,15 +129,14 @@ RUN set -xe \
     && docker-php-ext-install /tmp/swoole \
     && rm -r /tmp/swoole
 
-#ENV RABBITMQ_VERSION v0.8.0
-#ENV PHP_AMQP_VERSION v1.9.0
-#RUN git clone --branch ${RABBITMQ_VERSION} https://github.com/alanxz/rabbitmq-c.git /tmp/rabbitmq \
-#            && cd /tmp/rabbitmq \
-#            && mkdir build && cd build \
-#            && cmake .. \
-#            && cmake --build . --target install \
-#            # workaround for linking issue
-#            && cp -r /usr/local/lib64/* /usr/lib/ \
+ENV RABBITMQ_VERSION v0.8.0
+RUN git clone --branch ${RABBITMQ_VERSION} https://github.com/alanxz/rabbitmq-c.git /tmp/rabbitmq \
+            && cd /tmp/rabbitmq \
+            && mkdir build && cd build \
+            && cmake .. \
+            && cmake --build . --target install \
+            && cp -r /usr/local/lib64/* /usr/lib/ 
+            
 #    && git clone --branch ${PHP_AMQP_VERSION} https://github.com/pdezwart/php-amqp.git /tmp/php-amqp \
 #            && cd /tmp/php-amqp \
 #            && phpize \
