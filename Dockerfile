@@ -147,7 +147,7 @@ RUN set -xe \
 #            && make test \
 #    && docker-php-ext-enable amqp   
 
-ENV PHP_AMQP_VERSION v1.9.0
+ENV PHP_AMQP_VERSION 1.10.2
 RUN set -ex \
     && curl -fSl http://pecl.php.net/get/amqp-${PHP_AMQP_VERSION}.tgz -o amqp.tar.gz \
     && mkdir -p /tmp/amqp \
