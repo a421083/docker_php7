@@ -195,9 +195,3 @@ RUN php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.ph
     && php -r "unlink('composer-setup.php');" \
    && mv composer.phar /usr/local/bin/composer
 
-#需要安装性能测试站点才打开
-#RUN set -xe && git clone https://github.com/perftools/xhgui.git /data/web/xhgui.eelly.dev 
-#COPY xhgui_config.php /data/web/xhgui.eelly.dev/config/config.php
-#COPY xhgui_composer.json /data/web/xhgui.eelly.dev/
-#RUN set -xe && cd /data/web/xhgui.eelly.dev && php install.php
-
