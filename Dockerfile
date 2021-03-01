@@ -190,11 +190,7 @@ RUN set -xe \
 
 RUN rm -rf /tmp/* && rm -rf /var/cache/apk/*
 
-#RUN php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');" \
-#    && php composer-setup.php --2 \
-#    && php -r "unlink('composer-setup.php');" \
-#   && mv composer.phar /usr/local/bin/composer
-
-RUN wget https://install.phpcomposer.com/composer.phar \
-    && mv composer.phar /usr/local/bin/composer
-
+RUN php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');" \
+    && php composer-setup.php --2 \
+    && php -r "unlink('composer-setup.php');" \
+   && mv composer.phar /usr/local/bin/composer
