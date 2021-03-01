@@ -120,7 +120,7 @@ RUN php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.ph
    && mv composer.phar /usr/local/bin/composer
 
 # compile a extension
-ENV SWOOLE_VERSION=4.4.8
+ENV SWOOLE_VERSION=4.6.3
 RUN set -xe \
     && curl -fSL http://pecl.php.net/get/swoole-${SWOOLE_VERSION}.tgz -o swoole.tar.gz \
     && mkdir -p /tmp/swoole \
