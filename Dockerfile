@@ -1,4 +1,4 @@
-FROM php:7.3.27-fpm-alpine
+FROM php:7.3.10-fpm-alpine
 
 WORKDIR /data/web
 
@@ -148,7 +148,7 @@ RUN set -ex \
     && mkdir -p /tmp/amqp \
     && tar -xf amqp.tar.gz -C /tmp/amqp  --strip-components=1 \
     && rm amqp.tar.gz \
-    && docker-php-ext-configure /tmp/amqp \
+    && docker-php-ext-configure /tmp/amqp --enable-amqp \
     && docker-php-ext-install /tmp/amqp \
     && rm -r /tmp/amqp
 
