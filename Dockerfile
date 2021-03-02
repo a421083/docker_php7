@@ -111,9 +111,6 @@ RUN set -xe \
 #    && cd /usr/src/php/ext/tideways\
 #    && docker-php-ext-install tideways 
 
-#RUN curl -sS https://getcomposer.org/installer | php \
-#    && mv composer.phar /usr/local/bin/composer
-
 # compile a extension
 ENV SWOOLE_VERSION=4.6.3
 RUN set -xe \
